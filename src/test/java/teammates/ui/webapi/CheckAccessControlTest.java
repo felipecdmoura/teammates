@@ -50,7 +50,7 @@ public class CheckAccessControlTest extends Action<CheckAccessControlTest> {
         authType = AuthType.PUBLIC
         getMinAuthLevel = AuthType.PUBLIC
         
-        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), "User " + userInfo.id+ " is trying to masquerade as " + userParam + " without admin permission."))
+        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), "User " + userInfo.id+ " is trying to masquerade as " + userParam + " without admin permission."));
     }
 
     @Test
@@ -62,7 +62,7 @@ public class CheckAccessControlTest extends Action<CheckAccessControlTest> {
         authType = AuthType.PUBLIC
         getMinAuthLevel = AuthType.PUBLIC
         
-        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), "User " + userInfo.id+ " is trying to masquerade as " + userParam + " without admin permission."))
+        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), "User " + userInfo.id+ " is trying to masquerade as " + userParam + " without admin permission."));
     }
 
     @Test
@@ -74,7 +74,7 @@ public class CheckAccessControlTest extends Action<CheckAccessControlTest> {
         authType = AuthType.PUBLIC
         getMinAuthLevel = AuthType.PUBLIC
         
-        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), checkSpecificAccessControl()))
+        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), checkSpecificAccessControl()));
     }
 
     @Test
@@ -86,7 +86,7 @@ public class CheckAccessControlTest extends Action<CheckAccessControlTest> {
         authType = AuthType.ALL_ACCESS
         getMinAuthLevel = AuthType.PUBLIC
         
-        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), return))
+        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), return));
     }
 
     @Test
@@ -98,7 +98,7 @@ public class CheckAccessControlTest extends Action<CheckAccessControlTest> {
         authType = AuthType.PUBLIC
         getMinAuthLevel = AuthType.LOGGED_IN
         
-        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), "Not authorized to access this resource."))
+        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), "Not authorized to access this resource."));
     }
 
      @Test
@@ -108,19 +108,19 @@ public class CheckAccessControlTest extends Action<CheckAccessControlTest> {
         authType = AuthType.PUBLIC
         getMinAuthLevel = AuthType.PUBLIC
         
-        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), "User " + userInfo.id+ " is trying to masquerade as " + userParam + " without admin permission."))
+        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), "User " + userInfo.id+ " is trying to masquerade as " + userParam + " without admin permission."));
     }
 
      @Test
     protected void testCase7{
-        String userParam = getRequestParamValue(Const.ParamsNames.USER_ID);
+        String userParam = 345;
         UserInfo userInfo;
         userInfo.id = 123;
         userInfo.isAdmin = True;
         authType = AuthType.PUBLIC
         getMinAuthLevel = 2
         
-        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), "User " + userInfo.id+ " is trying to masquerade as " + userParam + " without admin permission."))
+        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), "User " + userInfo.id+ " is trying to masquerade as " + userParam + " without admin permission."));
     }
 
      @Test
@@ -132,6 +132,6 @@ public class CheckAccessControlTest extends Action<CheckAccessControlTest> {
         authType = AuthType.PUBLIC
         getMinAuthLevel = 2
         
-        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), "User " + userInfo.id+ " is trying to masquerade as " + userParam + " without admin permission."))
+        assert((checkAccessControl(userParam, userInfo, authType, getMinAuthLevel), "User " + userInfo.id+ " is trying to masquerade as " + userParam + " without admin permission."));
     }
 }
